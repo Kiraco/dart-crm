@@ -1,0 +1,83 @@
+<main>
+    <!--
+        Header
+    -->
+    <header>
+        <div class="header">
+            <img src="images/menos_kilos.png" width="300" height="100">
+            <nav>
+                <div>
+                    <button>Logout</button>
+                </div>  
+            </nav>
+        </div>
+    </header>
+
+    <!--
+        Navigation panel
+    -->
+    <nav>
+        <div class="menu">
+            <ul>
+                <li>
+                    <span>Inicio</span>
+                </li>
+                <li>
+                    <span>Pacientes</span>
+                </li>
+                <li>
+                    <span>Consultas</span>
+                </li>
+                <li>
+                    <span>Catálogo</span>
+                </li>
+                <li>
+                    <span>Gasto</span>
+                </li>
+                <li>
+                    <span>Reporte</span>
+                </li>
+                <li>
+                    <span>Administrador</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--
+        wraps the content of each menu 
+    -->
+    <section>
+        <div class="content">
+                <div>                
+                    </div><h1>{{title}}</h1>
+                    <h2>Users</h2>
+                    <ul class="users">
+                        <li *ngFor='let user of users'
+                            [class.selected]="user === selectedUser"
+                            (click)='onSelect(user)'>
+                            <span class="badge">{{user.id}}</span> {{user.name}}
+                        </li>
+                    </ul>
+                    
+                    <div *ngIf="selectedUser != null">
+                        <h2>{{selectedUser.name}}</h2>
+                        <div><label>id: </label>{{selectedUser.id}}</div>
+                        <div>
+                          <label>name: </label>
+                          <input [(ngModel)]="selectedUser.name" placeholder="name">
+                        </div>
+                      </div>
+        </div>
+    </section>
+
+    <!--
+        Footer
+    -->
+    <footer>
+        <div class="footer">
+
+        </div>
+    </footer>
+</main>
+

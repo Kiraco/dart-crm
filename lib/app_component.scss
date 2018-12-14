@@ -1,0 +1,14 @@
+@import 'header';
+@import 'menu';
+@import 'content';
+@import 'footer';
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "menu content"
+        "footer footer";
+}
